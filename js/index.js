@@ -54,16 +54,17 @@ const footer = document.querySelector('footer')
 
 
 //header
-const anchors = header.querySelector('nav a')
+const links = document.querySelectorAll('a')
 const logoImage = header.querySelector('#logo-img')
 
 //a tags
-const servicesNav = anchors
-const productNav = servicesNav.nextElementSibling
-const visionNav = productNav.nextElementSibling
-const featuresNav = visionNav.nextElementSibling
-const aboutNav = featuresNav.nextElementSibling
-const contactNav = aboutNav.nextElementSibling 
+
+links[0].textContent = 'Services'
+links[1].textContent = 'Product'
+links[2].textContent = 'Vision'
+links[3].textContent = 'Features'
+links[4].textContent = 'About'
+links[5].textContent = 'Contact'
 
 
 //banner
@@ -71,23 +72,54 @@ const bannerHeader = banner.querySelector('h1')
 const bannerButton = banner.querySelector('button')
 const bannerImage = banner.querySelector('#cta-img')
 
-//mainContent
+//mainContent---------------------------------------------------------
+
 const topMainContent = mainContent.querySelector('.top-content')
+
+//Features Content
+const featuresContent = topMainContent.querySelector('.text-content')
+featuresContent.classList.add('features')
+const featuresHeader = featuresContent.querySelector('h4')
+const featuresPar = featuresContent.querySelector('p')
+//About Content
+const aboutContent = featuresContent.nextElementSibling
+aboutContent.classList.add('about') 
+const aboutHeader = aboutContent.querySelector('h4')
+const aboutPar = aboutContent.querySelector('p')
+
 const mainContentImage = mainContent.querySelector('#middle-img')
+
 const bottomMainContent = mainContent.querySelector('.bottom-content')
 
-const topHeaderOne = topMainContent.querySelector('h4')
-const topHeaderTwo = topHeaderOne.nextElementSibling
-const topParagraphOne = topMainContent.querySelector('p')
-const topParagraphTwo = topParagraphOne.nextElementSibling
-console.log(topHeaderOne, topHeaderTwo)
+//Services Content
+const serviceContent = bottomMainContent.querySelector('.text-content')
+serviceContent.classList.add('service')
+const serviceHeader = serviceContent.querySelector('h4')
+const servicePar = serviceContent.querySelector('p')
+//Product Content
+const productContent = serviceContent.nextElementSibling
+productContent.classList.add('product') 
+const productHeader = productContent.querySelector('h4')
+const productPar = productContent.querySelector('p')
+//Vision
+const visionContent = productContent.nextElementSibling
+visionContent.classList.add('vision') 
+const visionHeader = visionContent.querySelector('h4')
+const visionPar = visionContent.querySelector('p')
 
-const bottomHeaderOne = bottomMainContent.querySelector('h4')
-const bottomHeaderTwo = bottomHeaderOne.nextElementSibling
-const bottomParagraphOne = bottomMainContent.querySelector('p')
-const bottomParagraphTwo = bottomParagraphOne.nextElementSibling
+// const topHeaderOne = topTextContent.querySelector('h4')
+// const topParagraphOne = topTextContent.querySelector('p')
+// const topHeaderTwo = topParagraphOne.nextElementSibling
+// const topParagraphTwo = topHeaderTwo.nextElementSibling
+
+// const bottomHeaderOne = bottomMainContent.querySelector('h4')
+// const bottomHeaderTwo = bottomHeaderOne.nextElementSibling
+// const bottomParagraphOne = bottomMainContent.querySelector('p')
+// const bottomParagraphTwo = bottomParagraphOne.nextElementSibling
 // const bottomHeaderThree = bottomHeaderTwo.nextElementSibling
 // const bottomParagraphThree = bottomParagraphTwo.nextElementSibling
+
+//---------------------------------------------------------------------
 
 //contact
 const contactHeader = contact.querySelector('h4')
@@ -101,37 +133,59 @@ const footerParagraph = footer.querySelector('p')
 
 //UPDATED HTML
 
-servicesNav.textContent = 'Services'
-productNav.textContent = 'Product'
-visionNav.textContent = 'Vision'
-featuresNav.textContent = 'Features'
-aboutNav.textContent = 'About'
-contactNav.textContent = 'Contact'
+
 
 logoImage.src = 'img/logo.png'
 
 
-bannerHeader.textContent = 'DOM Is Awesome' 
+bannerHeader.innerHTML += 'DOM <br/> Is <br/> Awesome' 
 bannerButton.textContent = 'Get Started'
 bannerImage.src = 'img/header-img.png' 
 
+//------------------WORK ON THIS-----------------------------
+featuresHeader.textContent = 'Features'
+featuresPar.textContent = 'Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
 
-topHeaderOne.textContent = 'Features'
-topParagraphOne.textContent = 'Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
-topHeaderTwo.textContent = 'About'
-// topParagraphTwo.textContent = 'About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
+aboutHeader.textContent = 'About'
+aboutPar.textContent = 'About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
 
 mainContentImage.src = 'img/mid-page-accent.jpg'
 
-bottomHeaderOne.textContent = 'Services'
-bottomHeaderTwo.textContent = 'Product'
+serviceHeader.textContent = 'Services'
+servicePar.textContent = 'Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
 
+productHeader.textContent = 'Product'
+productPar.textContent = 'Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
 
+visionHeader.textContent = 'Vision'
+visionPar.textContent = 'Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.'
+
+//---------------------------------------------------------------
 
 contactHeader.textContent = 'Contact'
-paragraphOne.textContent = '123 Way 456 Street Somewhere, USA'
+paragraphOne.innerHTML += '123 Way 456 Street <br/> Somewhere, USA'
 paragraphTwo.textContent = '1 (888) 888-8888'
 paragraphThree.textContent = 'sales@greatidea.io'
 
 footerParagraph.textContent = 'Copyright Great Idea! 2018'
+
 //NEW CONTENT
+
+//Change the color of the navigation text to be green.
+links.forEach(green => green.style.color = 'green')
+
+//Utilize `.appendChild()` and `.prepend()` to add two 
+//new items to the navigation system. You can call them 
+//whatever you want.
+
+const ideas = document.createElement('a')
+ideas.textContent = 'Ideas'
+ideas.href = '#'
+
+document.querySelector('nav').appendChild(ideas)
+
+const blog = document.createElement('a')
+blog.textContent = 'Blog'
+blog.href = '#'
+
+document.querySelector('nav').appendChild(blog)
